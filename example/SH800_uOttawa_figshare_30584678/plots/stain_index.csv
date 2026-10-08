@@ -1,0 +1,4 @@
+"sample","pct_pos","median_pos","median_neg","rSD_neg","stain_index","stain","setting","control","label"
+"Cytotrol_CD4-SK3_PE_High",59.67,228379.9,3295.4,1129.6,99.63,"CD4-PE","High",FALSE,"CD4-PE, High"
+"Cytotrol_CD4-SK3_PE_Low",57.21,5031.3,47,34.7,71.82,"CD4-PE","Low",FALSE,"CD4-PE, Low"
+"Cytotrol_CD4-SK3_PE_Medium",58.04,26121.7,330.8,134.7,95.73,"CD4-PE","Medium",FALSE,"CD4-PE, Medium"

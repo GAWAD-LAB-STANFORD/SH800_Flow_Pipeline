@@ -1,0 +1,7 @@
+"sample","events_in","margin_removed","margin_channels","peacoqc_removed","events_kept","pct_removed","stain","setting","control","label"
+"Cytotrol_CD4-SK3_PE_High",40128,31,"FSC-H:31",0,40097,0.08,"CD4-PE","High",FALSE,"CD4-PE, High"
+"Cytotrol_CD4-SK3_PE_Low",42507,27,"FSC-H:27",480,42000,1.19,"CD4-PE","Low",FALSE,"CD4-PE, Low"
+"Cytotrol_CD4-SK3_PE_Medium",44499,44,"FSC-H:44",0,44455,0.1,"CD4-PE","Medium",FALSE,"CD4-PE, Medium"
+"Cytotrol_Unst_High",38151,21,"FSC-H:21",130,38000,0.4,"Unstained","High",TRUE,"Unstained, High"
+"Cytotrol_Unst_Low",37276,28,"FSC-H:28",0,37248,0.08,"Unstained","Low",TRUE,"Unstained, Low"
+"Cytotrol_Unst_Medium",43008,38,"FSC-H:38",750,42220,1.83,"Unstained","Medium",TRUE,"Unstained, Medium"

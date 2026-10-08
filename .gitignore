@@ -1,0 +1,6 @@
+# downloaded example data (fetch with example/download_example_data.sh)
+example/SH800_uOttawa_figshare_30584678/*.fcs
+.DS_Store
+__pycache__/
+*.pyc
+.Rhistory

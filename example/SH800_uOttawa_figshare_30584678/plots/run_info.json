@@ -1,0 +1,156 @@
+{
+  "analysis_date": "2026-10-08",
+  "script": "sh800_flow.R (sh800-flow-analysis skill)",
+  "fcs_dir": "SH800_uOttawa_figshare_30584678",
+  "file_pattern": "^Cytotrol.*\\.fcs$",
+  "files": [
+    "Cytotrol_CD4-SK3_PE_High.fcs",
+    "Cytotrol_CD4-SK3_PE_Low.fcs",
+    "Cytotrol_CD4-SK3_PE_Medium.fcs",
+    "Cytotrol_Unst_High.fcs",
+    "Cytotrol_Unst_Low.fcs",
+    "Cytotrol_Unst_Medium.fcs"
+  ],
+  "n_files": 6,
+  "instrument": [
+    "LE-SH800SZFCPL"
+  ],
+  "instrument_serial": [
+    "314135"
+  ],
+  "acquisition_dates": {
+    "Cytotrol_CD4-SK3_PE_High": "04-Jul-2025",
+    "Cytotrol_CD4-SK3_PE_Low": "04-Jul-2025",
+    "Cytotrol_CD4-SK3_PE_Medium": "04-Jul-2025",
+    "Cytotrol_Unst_High": "04-Jul-2025",
+    "Cytotrol_Unst_Low": "04-Jul-2025",
+    "Cytotrol_Unst_Medium": "04-Jul-2025"
+  },
+  "fcs_version": [
+    "3.1"
+  ],
+  "channels": {
+    "fsc_area": "FSC-A",
+    "fsc_height": "FSC-H",
+    "fsc_width": "FSC-W",
+    "side_scatter": "SSC-A",
+    "time": "TIME",
+    "fluorescence": [
+      "FL1-A",
+      "FL2-A",
+      "FL3-A",
+      "FL4-A",
+      "FL5-A",
+      "FL6-A"
+    ]
+  },
+  "channel_labels": {
+    "FL1-A": "FL1-A [Brilliant Violet 421 filter]",
+    "FL2-A": "FL2-A [FITC filter]",
+    "FL3-A": "CD4 PE (FL3-A)",
+    "FL4-A": "FL4-A [APC filter]",
+    "FL5-A": "FL5-A [PerCP-Cy5.5 filter]",
+    "FL6-A": "FL6-A [PE-Cy7 filter]"
+  },
+  "panel": {
+    "FL3-A": "CD4 PE"
+  },
+  "stained_channels": [
+    "FL3-A"
+  ],
+  "compensation": "embedded spillover is an identity matrix: data are UNCOMPENSATED, none applied",
+  "compensation_short": "uncompensated",
+  "transform": "logicle (estimateLogicle on a pooled subsample of all files)",
+  "margin_rule": "events piled up at a detector's maximum (>= 5 within 0.01%) are removed as saturated",
+  "peacoqc": true,
+  "debris_gate": "openCyto mindensity on FSC-A",
+  "singlet_gate": "size-aware FSC-A/FSC-H ratio band, +/- 4 robust SD of the doublet-free side",
+  "leaf_population": "singlets",
+  "positive_gate": {
+    "channel": "FL3-A",
+    "marker": "CD4 PE (FL3-A)",
+    "name": "CD4+",
+    "quantile": 0.995,
+    "control_pattern": "Unst",
+    "match_by": "setting",
+    "thresholds_logicle": {
+      "High": 2.4477,
+      "Low": 0.734,
+      "Medium": 1.4804
+    }
+  },
+  "controls": [
+    "Cytotrol_Unst_Low",
+    "Cytotrol_Unst_Medium",
+    "Cytotrol_Unst_High"
+  ],
+  "example_sample": "Cytotrol_CD4-SK3_PE_Medium",
+  "samples": [
+    {
+      "sample": "Cytotrol_CD4-SK3_PE_Low",
+      "stain": "CD4-PE",
+      "setting": "Low",
+      "control": false,
+      "label": "CD4-PE, Low"
+    },
+    {
+      "sample": "Cytotrol_CD4-SK3_PE_Medium",
+      "stain": "CD4-PE",
+      "setting": "Medium",
+      "control": false,
+      "label": "CD4-PE, Medium"
+    },
+    {
+      "sample": "Cytotrol_CD4-SK3_PE_High",
+      "stain": "CD4-PE",
+      "setting": "High",
+      "control": false,
+      "label": "CD4-PE, High"
+    },
+    {
+      "sample": "Cytotrol_Unst_Low",
+      "stain": "Unstained",
+      "setting": "Low",
+      "control": true,
+      "label": "Unstained, Low"
+    },
+    {
+      "sample": "Cytotrol_Unst_Medium",
+      "stain": "Unstained",
+      "setting": "Medium",
+      "control": true,
+      "label": "Unstained, Medium"
+    },
+    {
+      "sample": "Cytotrol_Unst_High",
+      "stain": "Unstained",
+      "setting": "High",
+      "control": true,
+      "label": "Unstained, High"
+    }
+  ],
+  "figures": [
+    "01_gating_strategy.png",
+    "02_qc_debris.png",
+    "03_qc_singlets.png",
+    "04_marker_histograms.png",
+    "05_all_detectors.png",
+    "06_population_frequencies.png",
+    "07_stain_index.png"
+  ],
+  "tables": [
+    "gate_percent.csv",
+    "median_intensity.csv",
+    "qc_events.csv",
+    "singlet_gate_parameters.csv",
+    "stain_index.csv"
+  ],
+  "software": {
+    "R": "R version 4.5.2 (2025-10-31)",
+    "flowCore": "2.22.1",
+    "flowWorkspace": "4.22.1",
+    "openCyto": "2.22.0",
+    "PeacoQC": "1.20.0",
+    "ggplot2": "4.0.2"
+  }
+}
